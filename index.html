@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio — 보안 시스템 개발자</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,272 +22,374 @@
         </nav>
     </header>
 
-    <!-- Section 1: Hero + SVG Interaction -->
+    <!-- ══════════════════════════════
+         Section 1: Hero + 큐브 SVG
+    ══════════════════════════════ -->
     <section id="hero">
-        <svg id="hero-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <!-- Layer 1 (느리게 이동) -->
-            <circle class="s1" cx="15%" cy="20%" r="90" fill="none" stroke="rgba(233,69,96,0.25)" stroke-width="2"/>
-            <circle class="s1" cx="85%" cy="75%" r="130" fill="none" stroke="rgba(233,69,96,0.15)" stroke-width="1.5"/>
-            <!-- Layer 2 (중간 속도) -->
-            <polygon class="s2" points="50%,8% 53%,14% 47%,14%" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
-            <rect class="s2" x="78%" y="55%" width="110" height="110" rx="12" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
-            <polygon class="s2" points="8%,65% 13%,74% 3%,74%" fill="none" stroke="rgba(233,69,96,0.22)" stroke-width="2"/>
-            <!-- Layer 3 (빠르게 이동) -->
-            <circle class="s3 dot" cx="28%" cy="55%" r="5" fill="rgba(233,69,96,0.6)"/>
-            <circle class="s3 dot" cx="55%" cy="22%" r="4" fill="rgba(255,255,255,0.45)"/>
-            <circle class="s3 dot" cx="70%" cy="42%" r="6" fill="rgba(233,69,96,0.35)"/>
-            <circle class="s3 dot" cx="10%" cy="38%" r="3" fill="rgba(255,255,255,0.3)"/>
-            <circle class="s3 dot" cx="90%" cy="30%" r="4" fill="rgba(233,69,96,0.45)"/>
-            <circle class="s3 dot" cx="42%" cy="80%" r="5" fill="rgba(255,255,255,0.25)"/>
+
+        <svg id="hero-svg" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+                <filter id="glow">
+                    <feGaussianBlur stdDeviation="4" result="blur"/>
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+            </defs>
+
+            <!-- 큐브 1 · 대형 (우측) — Layer 2 -->
+            <g class="cube c2" filter="url(#glow)">
+                <polygon points="920,155 997,200 920,245 843,200" fill="rgba(79,124,255,0.28)" stroke="rgba(79,124,255,0.6)" stroke-width="1.5"/>
+                <polygon points="997,200 997,290 920,335 920,245" fill="rgba(79,124,255,0.14)" stroke="rgba(79,124,255,0.45)" stroke-width="1.5"/>
+                <polygon points="843,200 920,245 920,335 843,290" fill="rgba(79,124,255,0.07)" stroke="rgba(79,124,255,0.35)" stroke-width="1.5"/>
+            </g>
+
+            <!-- 큐브 2 · 중형 (좌측 상단) — Layer 1 -->
+            <g class="cube c1">
+                <polygon points="270,185 314,209 270,233 226,209" fill="rgba(79,124,255,0.22)" stroke="rgba(79,124,255,0.5)" stroke-width="1.5"/>
+                <polygon points="314,209 314,257 270,281 270,233" fill="rgba(79,124,255,0.11)" stroke="rgba(79,124,255,0.38)" stroke-width="1.5"/>
+                <polygon points="226,209 270,233 270,281 226,257" fill="rgba(79,124,255,0.06)" stroke="rgba(79,124,255,0.28)" stroke-width="1.5"/>
+            </g>
+
+            <!-- 큐브 3 · 소형 (우하단) — Layer 3 -->
+            <g class="cube c3" filter="url(#glow)">
+                <polygon points="1210,490 1244,509 1210,528 1176,509" fill="rgba(99,102,255,0.3)" stroke="rgba(99,102,255,0.6)" stroke-width="1.2"/>
+                <polygon points="1244,509 1244,547 1210,566 1210,528" fill="rgba(99,102,255,0.15)" stroke="rgba(99,102,255,0.4)" stroke-width="1.2"/>
+                <polygon points="1176,509 1210,528 1210,566 1176,547" fill="rgba(99,102,255,0.08)" stroke="rgba(99,102,255,0.3)" stroke-width="1.2"/>
+            </g>
+
+            <!-- 큐브 4 · 미니 (좌하단) — Layer 2 -->
+            <g class="cube c2">
+                <polygon points="155,530 177,542 155,554 133,542" fill="rgba(79,124,255,0.2)" stroke="rgba(79,124,255,0.42)" stroke-width="1"/>
+                <polygon points="177,542 177,566 155,578 155,554" fill="rgba(79,124,255,0.1)" stroke="rgba(79,124,255,0.3)" stroke-width="1"/>
+                <polygon points="133,542 155,554 155,578 133,566" fill="rgba(79,124,255,0.05)" stroke="rgba(79,124,255,0.22)" stroke-width="1"/>
+            </g>
+
+            <!-- 큐브 5 · 와이어프레임 (중앙) — Layer 1 -->
+            <g class="cube c1">
+                <polygon points="580,270 632,299 580,328 528,299" fill="none" stroke="rgba(79,124,255,0.22)" stroke-width="1.5" stroke-dasharray="4 3"/>
+                <polygon points="632,299 632,357 580,386 580,328" fill="none" stroke="rgba(79,124,255,0.16)" stroke-width="1.5" stroke-dasharray="4 3"/>
+                <polygon points="528,299 580,328 580,386 528,357" fill="none" stroke="rgba(79,124,255,0.12)" stroke-width="1.5" stroke-dasharray="4 3"/>
+            </g>
+
+            <!-- 큐브 6 · 와이어프레임 소형 (우상단) — Layer 3 -->
+            <g class="cube c3">
+                <polygon points="1300,130 1326,145 1300,160 1274,145" fill="none" stroke="rgba(79,124,255,0.3)" stroke-width="1"/>
+                <polygon points="1326,145 1326,175 1300,190 1300,160" fill="none" stroke="rgba(79,124,255,0.22)" stroke-width="1"/>
+                <polygon points="1274,145 1300,160 1300,190 1274,175" fill="none" stroke="rgba(79,124,255,0.16)" stroke-width="1"/>
+            </g>
+
             <!-- 연결선 -->
-            <line class="s2 ln" x1="28%" y1="55%" x2="55%" y2="22%" stroke="rgba(233,69,96,0.12)" stroke-width="1"/>
-            <line class="s2 ln" x1="55%" y1="22%" x2="70%" y2="42%" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-            <line class="s2 ln" x1="70%" y1="42%" x2="90%" y2="30%" stroke="rgba(233,69,96,0.1)" stroke-width="1"/>
-            <!-- 큰 배경 원 -->
-            <circle class="s1" cx="50%" cy="50%" r="320" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-            <circle class="s1" cx="50%" cy="50%" r="200" fill="none" stroke="rgba(233,69,96,0.05)" stroke-width="1"/>
+            <line x1="270" y1="233" x2="580" y2="328" stroke="rgba(79,124,255,0.1)" stroke-width="1"/>
+            <line x1="920" y1="245" x2="1210" y2="528" stroke="rgba(79,124,255,0.08)" stroke-width="1"/>
+            <line x1="580" y1="328" x2="920" y2="245" stroke="rgba(79,124,255,0.07)" stroke-width="1"/>
+
+            <!-- 파티클 -->
+            <circle cx="430" cy="480" r="3" fill="rgba(79,124,255,0.5)"/>
+            <circle cx="750" cy="180" r="2.5" fill="rgba(255,255,255,0.3)"/>
+            <circle cx="1050" cy="380" r="3.5" fill="rgba(79,124,255,0.4)"/>
+            <circle cx="200" cy="700" r="2" fill="rgba(79,124,255,0.35)"/>
+            <circle cx="1350" cy="620" r="2.5" fill="rgba(255,255,255,0.2)"/>
         </svg>
 
         <div class="hero-content">
-            <p class="hero-label">안녕하세요, 저는</p>
+            <p class="hero-label">보안 시스템 · 엔터프라이즈 개발</p>
             <h1 class="hero-title">
-                <span class="title-line">창의적인</span>
-                <span class="title-line accent">개발자</span>
-                <span class="title-line">입니다</span>
+                <span class="tl">금융·제조·공공</span>
+                <span class="tl tl-accent">보안 시스템</span>
+                <span class="tl">전문 개발자</span>
             </h1>
-            <p class="hero-desc">아이디어를 코드로, 코드를 경험으로 바꿉니다.</p>
+            <p class="hero-desc">금융결제원, 신한, 하나카드, 한화생명, 현대자동차, 경찰청<br>대형 고객사의 핵심 보안 인프라를 설계하고 구축합니다.</p>
             <div class="hero-btns">
                 <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
-                <a href="#contact" class="btn btn-outline">연락하기</a>
+                <a href="#contact" class="btn btn-ghost">연락하기</a>
             </div>
         </div>
 
-        <div class="scroll-indicator">
-            <div class="scroll-mouse">
-                <div class="scroll-wheel"></div>
-            </div>
+        <div class="scroll-hint">
+            <div class="sh-mouse"><div class="sh-wheel"></div></div>
             <span>스크롤</span>
         </div>
     </section>
 
-    <!-- Section 2: About -->
-    <section id="about">
-        <div class="section-inner">
-            <div class="section-header">
-                <span class="section-num">01</span>
-                <h2 class="section-title">소개</h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-visual">
-                    <div class="avatar-wrap">
-                        <svg class="avatar-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#e94560"/>
-                                    <stop offset="100%" style="stop-color:#0f3460"/>
-                                </linearGradient>
-                            </defs>
-                            <circle cx="110" cy="110" r="100" fill="url(#avatarGrad)" opacity="0.15"/>
-                            <circle cx="110" cy="85" r="40" fill="url(#avatarGrad)" opacity="0.8"/>
-                            <ellipse cx="110" cy="185" rx="65" ry="45" fill="url(#avatarGrad)" opacity="0.8"/>
-                            <circle cx="110" cy="110" r="100" fill="none" stroke="#e94560" stroke-width="2" stroke-dasharray="8 4" opacity="0.4"/>
-                        </svg>
-                        <div class="avatar-ring"></div>
+    <!-- ══════════════════════════════
+         Section 2: About
+    ══════════════════════════════ -->
+    <div class="card-wrap">
+        <section id="about" class="card-section">
+            <div class="sec-label">01 · 소개</div>
+            <div class="about-layout">
+                <div class="about-left">
+                    <h2 class="sec-heading">엔터프라이즈급<br><span>보안 시스템 개발자</span></h2>
+                    <p>2022년부터 금융·제조·공공 분야의 대형 기업 보안 인프라를 구축해왔습니다. <strong>노바소프트</strong>에서 금융권 보안 포털, 문서반출 시스템, 디자인 포털을 담당했으며, <strong>마이즈</strong>에서 방문객 키오스크 및 출입통제 시스템을 단독 개발했습니다.</p>
+                    <p>C# .NET 기반의 윈도우 서버 애플리케이션부터 리눅스 서버 배포까지, 기획·설계·개발·배포를 단독으로 수행하는 풀사이클 개발자입니다.</p>
+                    <div class="tag-row">
+                        <span>#C# .NET</span>
+                        <span>#보안시스템</span>
+                        <span>#WPF / Winform</span>
+                        <span>#서버구축</span>
+                        <span>#API연동</span>
+                        <span>#DB설계</span>
                     </div>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
-                            <p>프로젝트</p>
+                </div>
+                <div class="about-right">
+                    <div class="stat-cards">
+                        <div class="stat-card">
+                            <span class="sc-num" data-target="7">0</span><span class="sc-plus">+</span>
+                            <p>완료 프로젝트</p>
                         </div>
-                        <div class="stat">
-                            <span class="stat-num" data-target="3">0</span><span class="stat-plus">+</span>
-                            <p>년 경력</p>
+                        <div class="stat-card">
+                            <span class="sc-num" data-target="3">0</span><span class="sc-plus">년+</span>
+                            <p>실무 경력</p>
                         </div>
-                        <div class="stat">
-                            <span class="stat-num" data-target="8">0</span><span class="stat-plus">+</span>
+                        <div class="stat-card">
+                            <span class="sc-num" data-target="6">0</span><span class="sc-plus">개</span>
+                            <p>대형 고객사</p>
+                        </div>
+                        <div class="stat-card">
+                            <span class="sc-num" data-target="10">0</span><span class="sc-plus">+</span>
                             <p>기술 스택</p>
                         </div>
                     </div>
-                </div>
-                <div class="about-text">
-                    <p class="about-intro">사용자 경험을 최우선으로 생각하는 <strong>풀스택 개발자</strong>입니다.</p>
-                    <p>다양한 프로젝트를 통해 문제 해결 능력을 키워왔으며, 새로운 기술을 배우고 적용하는 것을 즐깁니다. 깔끔한 코드와 직관적인 UI를 만들기 위해 항상 노력합니다.</p>
-                    <p>협업과 소통을 중요하게 여기며, 팀원들과 함께 성장하는 개발 문화를 추구합니다.</p>
-                    <div class="about-tags">
-                        <span>#문제해결</span>
-                        <span>#사용자경험</span>
-                        <span>#클린코드</span>
-                        <span>#지속성장</span>
+
+                    <div class="career-timeline">
+                        <div class="ct-item">
+                            <div class="ct-dot"></div>
+                            <div class="ct-info">
+                                <span class="ct-period">2022.07 — 2025.02</span>
+                                <strong>노바소프트</strong>
+                                <p>금융권 보안 포털 구축 전문</p>
+                            </div>
+                        </div>
+                        <div class="ct-item">
+                            <div class="ct-dot active"></div>
+                            <div class="ct-info">
+                                <span class="ct-period">2025.04 — 현재</span>
+                                <strong>마이즈</strong>
+                                <p>키오스크 · 출입통제 시스템 개발</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- Section 3: Skills -->
-    <section id="skills">
-        <div class="section-inner">
-            <div class="section-header">
-                <span class="section-num">02</span>
-                <h2 class="section-title">기술 스택</h2>
-            </div>
+    <!-- ══════════════════════════════
+         Section 3: Skills
+    ══════════════════════════════ -->
+    <div class="card-wrap">
+        <section id="skills" class="card-section card-dark">
+            <div class="sec-label">02 · 기술 스택</div>
+            <h2 class="sec-heading">사용하는<br><span>기술들</span></h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-top">
-                        <span class="skill-icon">🌐</span>
-                        <h3>HTML / CSS</h3>
-                        <span class="skill-pct">90%</span>
+                <div class="sk-card">
+                    <div class="sk-top">
+                        <span class="sk-icon">⚙️</span>
+                        <h3>C# / .NET Framework</h3>
+                        <span class="sk-pct">95%</span>
                     </div>
-                    <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                    <div class="sk-bar"><div class="sk-fill" data-width="95"></div></div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-top">
-                        <span class="skill-icon">⚡</span>
-                        <h3>JavaScript</h3>
-                        <span class="skill-pct">80%</span>
+                <div class="sk-card">
+                    <div class="sk-top">
+                        <span class="sk-icon">🖥️</span>
+                        <h3>WPF / Winform</h3>
+                        <span class="sk-pct">90%</span>
                     </div>
-                    <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                    <div class="sk-bar"><div class="sk-fill" data-width="90"></div></div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-top">
-                        <span class="skill-icon">⚛️</span>
-                        <h3>React</h3>
-                        <span class="skill-pct">75%</span>
+                <div class="sk-card">
+                    <div class="sk-top">
+                        <span class="sk-icon">🗄️</span>
+                        <h3>MSSQL</h3>
+                        <span class="sk-pct">88%</span>
                     </div>
-                    <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+                    <div class="sk-bar"><div class="sk-fill" data-width="88"></div></div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-top">
-                        <span class="skill-icon">🐍</span>
-                        <h3>Python</h3>
-                        <span class="skill-pct">78%</span>
+                <div class="sk-card">
+                    <div class="sk-top">
+                        <span class="sk-icon">🌐</span>
+                        <h3>Windows Server / IIS</h3>
+                        <span class="sk-pct">85%</span>
                     </div>
-                    <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+                    <div class="sk-bar"><div class="sk-fill" data-width="85"></div></div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-top">
-                        <span class="skill-icon">🟢</span>
-                        <h3>Node.js</h3>
-                        <span class="skill-pct">68%</span>
+                <div class="sk-card">
+                    <div class="sk-top">
+                        <span class="sk-icon">⚡</span>
+                        <h3>jQuery / JavaScript</h3>
+                        <span class="sk-pct">75%</span>
                     </div>
-                    <div class="skill-bar"><div class="skill-fill" data-width="68"></div></div>
+                    <div class="sk-bar"><div class="sk-fill" data-width="75"></div></div>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-top">
-                        <span class="skill-icon">🔧</span>
-                        <h3>Git</h3>
-                        <span class="skill-pct">88%</span>
+                <div class="sk-card">
+                    <div class="sk-top">
+                        <span class="sk-icon">🐧</span>
+                        <h3>Linux (Redhat) / Kestrel</h3>
+                        <span class="sk-pct">65%</span>
                     </div>
-                    <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+                    <div class="sk-bar"><div class="sk-fill" data-width="65"></div></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- Section 4: Projects -->
-    <section id="projects">
-        <div class="section-inner">
-            <div class="section-header">
-                <span class="section-num">03</span>
-                <h2 class="section-title">프로젝트</h2>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-tag">Web</span>
-                        <div class="project-links">
-                            <a href="#" title="GitHub">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <h3>풀스택 웹 앱</h3>
-                    <p>React와 Node.js를 활용한 실시간 데이터 시각화 플랫폼. 사용자 인증과 대시보드를 구현했습니다.</p>
-                    <div class="project-techs">
-                        <span>React</span><span>Node.js</span><span>MongoDB</span>
-                    </div>
-                </div>
+    <!-- ══════════════════════════════
+         Section 4: Projects
+    ══════════════════════════════ -->
+    <div class="card-wrap">
+        <section id="projects" class="card-section">
+            <div class="sec-label">03 · 프로젝트</div>
+            <h2 class="sec-heading">구축해온<br><span>시스템들</span></h2>
+            <div class="proj-grid">
 
-                <div class="project-card featured">
-                    <div class="project-header">
-                        <span class="project-tag">Featured</span>
-                        <div class="project-links">
-                            <a href="#" title="GitHub">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            </a>
-                        </div>
+                <div class="proj-card proj-featured">
+                    <div class="proj-top">
+                        <span class="proj-tag feat">진행중</span>
+                        <span class="proj-period">2025.10 — 2026.03</span>
                     </div>
-                    <h3>AI 포트폴리오 생성기</h3>
-                    <p>GPT API를 활용해 자동으로 포트폴리오를 생성하는 SaaS 서비스. 300명 이상의 사용자가 이용했습니다.</p>
-                    <div class="project-techs">
-                        <span>Next.js</span><span>OpenAI</span><span>Tailwind</span>
+                    <h3>현대자동차 양재 본사<br>스마트러기지 · 방문객 키오스크</h3>
+                    <p>임직원 얼굴등록 프로세스, 비콘 카드 연동, 화물운송 오토스토어 연동, 방문예약·출입통제 시스템 연동. <strong>단독 개발</strong>.</p>
+                    <div class="proj-meta">
+                        <span>🏢 마이즈</span>
+                        <span>👤 단독</span>
+                        <span>⏱ 6개월</span>
+                    </div>
+                    <div class="proj-techs">
+                        <span>C#</span><span>Winform</span><span>MSSQL</span><span>IIS</span><span>Redhat</span>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <span class="project-tag">API</span>
-                        <div class="project-links">
-                            <a href="#" title="GitHub">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                            </a>
-                        </div>
+                <div class="proj-card">
+                    <div class="proj-top">
+                        <span class="proj-tag">완료</span>
+                        <span class="proj-period">2025.07 — 2025.09</span>
                     </div>
-                    <h3>RESTful API 서비스</h3>
-                    <p>Python FastAPI로 구현한 고성능 백엔드 API. JWT 인증, 캐싱, 비동기 처리를 적용했습니다.</p>
-                    <div class="project-techs">
-                        <span>Python</span><span>FastAPI</span><span>PostgreSQL</span>
+                    <h3>경찰청<br>출입통제 시스템 · 키오스크 도입</h3>
+                    <p>출입증 발급 시스템 구축, 출입·차량통제 시스템 연동, 국가정보자원관리원 모바일 메시지(카카오 알림톡) 서비스 개발, 리눅스 웹 서버 배포. <strong>단독 개발</strong>.</p>
+                    <div class="proj-meta">
+                        <span>🏛 마이즈</span>
+                        <span>👤 단독</span>
+                        <span>⏱ 3개월</span>
+                    </div>
+                    <div class="proj-techs">
+                        <span>C#</span><span>Winform</span><span>Redhat</span><span>Kestrel</span><span>Apache</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Section 5: Contact -->
-    <section id="contact">
-        <div class="section-inner">
-            <div class="section-header">
-                <span class="section-num">04</span>
-                <h2 class="section-title">연락처</h2>
+                <div class="proj-card">
+                    <div class="proj-top">
+                        <span class="proj-tag">완료</span>
+                        <span class="proj-period">2025.04 — 2025.07</span>
+                    </div>
+                    <h3>현대자동차 그룹<br>방문객 키오스크</h3>
+                    <p>방문객 출입증 발급 프로세스 수립. 여권·신분증 스캐너 연동 및 OCR 개발, 카드리더기·스파이럴 장비 연동, 키오스크 웹 페이지 및 Winform 데몬 개발.</p>
+                    <div class="proj-meta">
+                        <span>🚗 마이즈</span>
+                        <span>👥 2명</span>
+                        <span>⏱ 3개월</span>
+                    </div>
+                    <div class="proj-techs">
+                        <span>C#</span><span>Winform</span><span>OCR</span><span>MSSQL</span><span>IIS</span>
+                    </div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-top">
+                        <span class="proj-tag">완료</span>
+                        <span class="proj-period">2024.10 — 2025.02</span>
+                    </div>
+                    <h3>한화생명<br>접근통제 · 계정관리 연동</h3>
+                    <p>접근통제 및 계정관리 솔루션 연동, 제로트러스트 체인 프로세스를 통한 자산설치·IP발급·계정 생성 프로세스 수립.</p>
+                    <div class="proj-meta">
+                        <span>🏦 노바소프트</span>
+                        <span>👥 4명</span>
+                        <span>⏱ 5개월</span>
+                    </div>
+                    <div class="proj-techs">
+                        <span>C#</span><span>WPF</span><span>.NET</span><span>MSSQL</span><span>IIS</span>
+                    </div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-top">
+                        <span class="proj-tag">완료</span>
+                        <span class="proj-period">2023.10 — 2024.04</span>
+                    </div>
+                    <h3>하나카드<br>디자인포털 구축</h3>
+                    <p>SSO, SMTP, 재고관리, 인사시스템, 준법심의 시스템 연동. 디자인 요청 및 공카드 발주 프로세스 수립.</p>
+                    <div class="proj-meta">
+                        <span>💳 노바소프트</span>
+                        <span>👥 4명</span>
+                        <span>⏱ 7개월</span>
+                    </div>
+                    <div class="proj-techs">
+                        <span>C#</span><span>WPF</span><span>jQuery</span><span>MSSQL</span><span>IIS</span>
+                    </div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-top">
+                        <span class="proj-tag">완료</span>
+                        <span class="proj-period">2022.07 — 2022.12</span>
+                    </div>
+                    <h3>금융결제원<br>정보보호 포털 구축</h3>
+                    <p>DLP, DRM, AP/WIPS, VPN, 외주인력관리, 보안성심의, SMTP 등 API 연동. 각 업무 신청서 프론트엔드 및 백엔드 비즈니스 로직 구현.</p>
+                    <div class="proj-meta">
+                        <span>🏛 노바소프트</span>
+                        <span>👥 4명</span>
+                        <span>⏱ 6개월</span>
+                    </div>
+                    <div class="proj-techs">
+                        <span>C#</span><span>WPF</span><span>jQuery</span><span>MSSQL</span><span>IIS</span>
+                    </div>
+                </div>
+
             </div>
-            <div class="contact-wrap">
+        </section>
+    </div>
+
+    <!-- ══════════════════════════════
+         Section 5: Contact
+    ══════════════════════════════ -->
+    <div class="card-wrap">
+        <section id="contact" class="card-section card-dark">
+            <div class="sec-label">04 · 연락처</div>
+            <div class="contact-layout">
                 <div class="contact-left">
-                    <p class="contact-headline">함께 만들어요.<br><span>새로운 무언가를.</span></p>
+                    <h2 class="sec-heading">함께<br><span>만들어요</span></h2>
+                    <p>새로운 프로젝트나 협업 제안,<br>어떤 이야기든 환영합니다.</p>
                     <div class="contact-links">
-                        <a href="mailto:your@email.com" class="contact-item">
-                            <span class="ci-icon">📧</span>
-                            <span>your@email.com</span>
+                        <a href="mailto:your@email.com" class="cl-item">
+                            <span>📧</span><span>your@email.com</span>
                         </a>
-                        <a href="https://github.com/NewyorkMnngo" target="_blank" class="contact-item">
-                            <span class="ci-icon">🐙</span>
-                            <span>github.com/NewyorkMnngo</span>
+                        <a href="https://github.com/NewyorkMnngo" target="_blank" class="cl-item">
+                            <span>🐙</span><span>github.com/NewyorkMnngo</span>
                         </a>
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder=" " required/>
-                        <label for="name">이름</label>
+                    <div class="fg">
+                        <input type="text" id="fname" placeholder=" " required/>
+                        <label for="fname">이름</label>
                     </div>
-                    <div class="form-group">
-                        <input type="email" id="email" placeholder=" " required/>
-                        <label for="email">이메일</label>
+                    <div class="fg">
+                        <input type="email" id="femail" placeholder=" " required/>
+                        <label for="femail">이메일</label>
                     </div>
-                    <div class="form-group">
-                        <textarea id="message" rows="4" placeholder=" " required></textarea>
-                        <label for="message">메시지</label>
+                    <div class="fg">
+                        <textarea id="fmsg" rows="4" placeholder=" " required></textarea>
+                        <label for="fmsg">메시지</label>
                     </div>
                     <button type="submit" class="btn btn-primary">보내기 →</button>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <footer>
-        <p>© 2026 Portfolio · Made with <span style="color:#e94560">♥</span> · <a href="https://github.com/NewyorkMnngo">NewyorkMnngo</a></p>
+        <p>© 2026 Portfolio · <a href="https://github.com/NewyorkMnngo" style="color:#4f7cff">NewyorkMnngo</a></p>
     </footer>
 
-    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
