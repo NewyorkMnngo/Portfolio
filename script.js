@@ -154,19 +154,25 @@ gsap.to('.tl-spine', {
     scrollTrigger: {
         trigger: '.timeline',
         start: 'top 70%',
-        end: 'bottom 85%',
+        end: 'bottom 88%',
         scrub: 0.6,
     },
 });
 
-document.querySelectorAll('.tl-item').forEach((item, i) => {
-    gsap.to(item, {
-        opacity: 1,
-        y: 0,
-        duration: 0.7,
-        ease: 'power3.out',
-        scrollTrigger: { trigger: item, start: 'top 84%' },
-    });
+document.querySelectorAll('.tl-row').forEach(row => {
+    const card = row.querySelector('.tl-card');
+    const isFlip = row.classList.contains('tl-flip');
+    gsap.fromTo(card,
+        { opacity: 0, x: isFlip ? 60 : -60 },
+        {
+            opacity: 1,
+            x: 0,
+            duration: 0.75,
+            ease: 'power3.out',
+            clearProps: 'transform',
+            scrollTrigger: { trigger: row, start: 'top 85%' },
+        }
+    );
 });
 
 
