@@ -131,7 +131,7 @@ nav ul li a:hover { color: var(--text); }
 
 .tl {
     display: block;
-    font-size: clamp(3.2rem, 7vw, 7rem);
+    font-size: clamp(2.4rem, 5.5vw, 5.5rem);
     font-weight: 900;
     line-height: 1;
     letter-spacing: -3px;
