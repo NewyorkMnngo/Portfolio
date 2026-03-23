@@ -146,15 +146,27 @@ document.querySelectorAll('.sk-fill').forEach(bar => {
 
 
 /* ───────────────────
-   프로젝트 카드 stagger
+   타임라인 애니메이션
 ─────────────────── */
-gsap.to('.proj-card', {
-    opacity: 1,
-    y: 0,
-    duration: 0.6,
-    stagger: 0.13,
-    ease: 'power3.out',
-    scrollTrigger: { trigger: '.proj-grid', start: 'top 82%' },
+gsap.to('.tl-spine', {
+    scaleY: 1,
+    ease: 'none',
+    scrollTrigger: {
+        trigger: '.timeline',
+        start: 'top 70%',
+        end: 'bottom 85%',
+        scrub: 0.6,
+    },
+});
+
+document.querySelectorAll('.tl-item').forEach((item, i) => {
+    gsap.to(item, {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: item, start: 'top 84%' },
+    });
 });
 
 
@@ -185,14 +197,3 @@ document.querySelectorAll('section[id]').forEach(s => {
 });
 
 
-/* ───────────────────
-   Contact form
-─────────────────── */
-document.getElementById('contactForm').addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = e.target.querySelector('button');
-    const orig = btn.textContent;
-    btn.textContent = '✓ 전송됨!';
-    btn.style.background = '#22c55e';
-    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; e.target.reset(); }, 2500);
-});
