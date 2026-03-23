@@ -12,7 +12,7 @@
     --accent:   #4f7cff;
     --accent2:  #6366f1;
     --text:     #f0f0ff;
-    --muted:    #6b6b85;
+    --muted:    #9898b2;
     --border:   rgba(255,255,255,0.06);
     --border2:  rgba(79,124,255,0.2);
     --radius:   28px;
@@ -579,7 +579,6 @@ nav ul li a:hover { color: var(--text); }
 .tl-side-period {
     font-size: 0.68rem;
     color: var(--muted);
-    opacity: 0.6;
     line-height: 1.6;
 }
 
@@ -607,7 +606,6 @@ nav ul li a:hover { color: var(--text); }
 .tl-duration {
     font-size: 0.72rem;
     color: var(--muted);
-    opacity: 0.7;
 }
 
 .tl-body h3 {
